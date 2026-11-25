@@ -4,11 +4,12 @@ usuarios = [
     {"nome": "Carla", "vip": False, "notificações_ativadas": False},
     {"nome": "João", "vip": False, "notificações_ativadas": True},
     {"nome": "Ana", "vip": True, "notificações_ativadas": True},
+    {"nome": "Bruno", "vip": True, "notificações_ativadas": False},
 ]
 
 
 async def enviar_notificações(usuario):
-    if usuario["vip"]:
+    if usuario["vip"] and usuario["notificações_ativadas"]:
         print("Notificação VIP para ", usuario["nome"], " enviada!")
     elif usuario["notificações_ativadas"]:
         await asyncio.sleep(0.1)
