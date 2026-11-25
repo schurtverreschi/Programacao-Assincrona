@@ -1,41 +1,54 @@
-### Praticando Python — Programação Assíncrona
+# Programação Assíncrona em Python
 
-> 🚧 **Status do Repositório:** Em desenvolvimento — repositório inicializado para a resolução gradual das atividades práticas do curso **Praticando Python: Programação Assíncrona** (Alura).
+Repositório de estudos desenvolvido em **Python** com foco na resolução dos desafios práticos do curso **"Praticando Python: Programação Assíncrona"** da Alura, explorando concorrência, corrotinas, agendamento e sincronização de tarefas com a biblioteca padrão `asyncio`.
 
-Repositório de estudos dedicado à prática de programação assíncrona em **Python** (utilizando `asyncio`, corrotinas e execução concorrente) e à aplicação disciplinada do fluxo de trabalho **GitHub Flow** durante o desenvolvimento das atividades.
+## 🎯 Objetivo do Projeto
 
-#### 🎯 Objetivo do Projeto
-* Consolidar os fundamentos de concorrência e assincronismo em Python por meio da resolução de exercícios práticos do curso da Alura.
-* Praticar organização e versionamento profissional aplicando o **GitHub Flow** (planejamento via GitHub Projects, rastreamento por Issues, desenvolvimento em branches dedicadas e integração via Pull Requests).
+Praticar o desenvolvimento de código assíncrono em Python aplicando `async`/`await`, criação e execução simultânea de múltiplas tarefas (`asyncio.create_task` e `asyncio.gather`), controle de tempo não bloqueante (`asyncio.sleep`) e gerenciamento de fluxos concorrentes em cenários simulados do dia a dia.
 
-#### 📁 Estrutura do Repositório
-*(Esta estrutura será atualizada conforme as atividades forem concluídas e integradas à branch `main`)*
+## 📁 Estrutura do Repositório
 
 ```text
 .
-├── .gitignore               # Arquivos e diretórios ignorados pelo Git
-└── README.md                # Documentação inicial do repositório
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── ex01_temporizador.py              # Temporizador assíncrono com contagem de tempo
+├── ex02_duas_tarefas.py              # Execução concorrente de duas tarefas simultâneas
+├── ex03_fatorial_paralelo.py         # Cálculo assíncrono/paralelo de fatoriais
+├── ex04_notificacoes.py              # Simulação de envio assíncrono de notificações
+├── ex05_pedidos_loja.py              # Processamento concorrente de pedidos de uma loja
+├── ex06_inscricoes_cursos.py         # Gerenciamento assíncrono de inscrições em cursos
+├── ex07_monitoramento_tarefas.py     # Acompanhamento de status e conclusão de tarefas
+├── ex08_sensores_ambientais.py       # Coleta e leitura contínua/assíncrona de sensores
+├── ex09_monitoramento_download.py    # Simulação de progresso e monitoramento de downloads
+└── ex10_sistema_apostas.py           # Simulação concorrente de processamento de apostas
 ```
 
-#### 🔄 Fluxo de Trabalho (GitHub Flow)
-Para simular um ambiente colaborativo e manter o histórico organizado, cada atividade segue o ciclo:
-1. **Planejamento:** Criação e acompanhamento das tarefas no quadro do **GitHub Projects**.
-2. **Issues:** Abertura de uma *Issue* específica descrevendo o escopo de cada atividade prática.
-3. **Branches:** Criação de uma branch dedicada a partir da `main` para desenvolver a solução da *Issue*.
-4. **Pull Request & Merge:** Abertura de *Pull Request* vinculada à *Issue* correspondente, revisão final e *merge* na branch `main`.
+## 🧩 Exercícios e Conceitos Praticados
 
-#### 🛠️ Tecnologias e Conceitos Aplicados
-* **Python 3.10+** (`asyncio`, `async`/`await`, corrotinas e tarefas concorrentes)
-* **Git e GitHub** (GitHub Flow, Projects, Issues, Branches e Pull Requests)
+* **Fundamentos e Concorrência Básica (`ex01_temporizador.py`, `ex02_duas_tarefas.py`)**: introdução a corrotinas com `async def`, suspensão não bloqueante com `await asyncio.sleep()` e execução simultânea de tarefas.
+* **Processamento Simultâneo (`ex03_fatorial_paralelo.py`, `ex04_notificacoes.py`)**: coordenação de múltiplas corrotinas em paralelo utilizando `asyncio.gather()` para otimizar o tempo total de execução.
+* **Fluxos de Negócio Assíncronos (`ex05_pedidos_loja.py`, `ex06_inscricoes_cursos.py`)**: simulação de etapas de validação, processamento e resposta em operações independentes sem bloquear o *event loop*.
+* **Monitoramento e Eventos Contínuos (`ex07_monitoramento_tarefas.py`, `ex08_sensores_ambientais.py`, `ex09_monitoramento_download.py`)**: controle do ciclo de vida de tasks, leitura periódica de dados simulados e acompanhamento de progresso em tempo real.
+* **Integração de Fluxos Concorrentes (`ex10_sistema_apostas.py`)**: consolidação dos conceitos de assincronismo para coordenar múltiplas operações e resultados simultâneos.
 
-#### ▶️ Como Executar Localmente
+## 🛠️ Tecnologias e Fluxo de Trabalho
+
+* **Python 3.10+** (`asyncio`)
+* **Git e GitHub** (organização do desenvolvimento utilizando **GitHub Flow** com *Issues*, *Branches* dedicadas por exercício e *Pull Requests*)
+
+## ▶️ Como Executar Localmente
+
 1. Clone o repositório e acesse a pasta do projeto:
+
 ```bash
-git clone https://github.com/schurtverreschi/<nome-do-repositorio>.git
-cd <nome-do-repositorio>
+git clone https://github.com/schurtverreschi/Programacao-Assincrona.git
+cd programacao-assincrona
 ```
 
 2. Crie e ative um ambiente virtual (opcional, recomendado):
+
 ```bash
 python -m venv .venv
 # Linux/macOS:
@@ -44,7 +57,14 @@ source .venv/bin/activate
 .venv\Scripts\activate
 ```
 
-3. *(Em breve)* Execute os scripts das atividades conforme forem adicionados ao repositório:
+3. *(Opcional)* Instale as dependências listadas no `requirements.txt`:
+
 ```bash
-python <nome_do_arquivo>.py
+pip install -r requirements.txt
+```
+
+4. Execute qualquer um dos exercícios pelo terminal:
+
+```bash
+python ex01_temporizador.py
 ```
